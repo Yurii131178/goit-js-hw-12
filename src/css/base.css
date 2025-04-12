@@ -33,6 +33,7 @@ img {
   align-items: center;
   gap: 8px;
   margin-bottom: 20px;
+  position: relative; /* Встановлюємо позиціонування для контейнера форми */
 }
 
 input {
@@ -139,15 +140,30 @@ button:hover {
   color: #2e2f42;
 }
 
+/* Лоадер */
 .loader-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: none; /* За замовчуванням лоадер прихований */
+  font-weight: 400;
   font-size: 16px;
-  font-weight: 500;
-  color: #fff;
-  z-index: 999;
+  color: #2e2f42;
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+  top: 100%; /* Лоадер буде під формою */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Клас для показу лоадера */
+.loader-text.show {
+  display: block; /* Лоадер показується */
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
 }
 
 @keyframes rotation {
