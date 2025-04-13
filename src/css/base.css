@@ -19,20 +19,17 @@ img {
   position: relative;
 }
 
-.work-area {
-  margin: 10px 20px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  min-height: 15vh;
-}
-
 .form {
   display: flex;
+  gap: 8px; /* Відстань між input і кнопкою */
   justify-content: center;
+}
+
+.work-area {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
+  padding: 20px;
 }
 
 input {
@@ -48,7 +45,8 @@ button {
   border-radius: 8px;
   border: 0;
   padding: 8px 16px;
-  width: 91px;
+  width: 125px;
+  height: 40px;
 
   background: #4e75ff;
 
@@ -130,22 +128,19 @@ button:hover {
   color: #2e2f42;
 }
 
-.loader-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.loader {
+  margin-top: 32px;
   font-size: 16px;
   font-weight: 500;
-  color: #ff0000;
-  z-index: 999;
+  color: #2e2f42;
+  text-align: center;
 }
 
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+  font-style: italic;
+  color: #4e75ff;
 }
