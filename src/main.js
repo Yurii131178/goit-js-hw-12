@@ -1,7 +1,7 @@
 
-import { doFetch } from './js/pixabay-api.js';
+import { getImagesByQuery } from './js/pixabay-api.js';
 
-import { makeGallery } from './js/render-functions.js';
+import { createGallery } from './js/render-functions.js';
 
 import SimpleLightbox from 'simplelightbox';
 
@@ -58,7 +58,7 @@ async function handleSearch(event) {
   page = 1;
 
   try {
-    const data = await doFetch(searchWord, page);
+    const data = await getImagesByQuery(searchWord, page);
 
     if (data.total === 0) {
       iziToast.show({
@@ -74,7 +74,7 @@ async function handleSearch(event) {
     }
 
     buttonMore.hidden = false;
-    photoGallery.insertAdjacentHTML('beforeend', makeGallery(data.data));
+    photoGallery.insertAdjacentHTML('beforeend', createGallery(data.data));
     book.refresh();
     event.target.reset();
     page += 1;
@@ -102,7 +102,7 @@ async function searchMore() {
   loader.hidden = false;
 
   try {
-    const data = await doFetch(searchWord, page);
+    const data = await getImagesByQuery(searchWord, page);
 
     if (data.total === 0) {
       showToast({ message: 'No more images found.' });
@@ -110,7 +110,7 @@ async function searchMore() {
       return;
     }
 
-    photoGallery.insertAdjacentHTML('beforeend', makeGallery(data.data));
+    photoGallery.insertAdjacentHTML('beforeend', createGallery(data.data));
     book.refresh();
     page += 1;
 

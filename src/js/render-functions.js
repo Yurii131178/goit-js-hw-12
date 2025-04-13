@@ -1,5 +1,5 @@
 
-export function makeGallery(getedObject) {
+export function createGallery(getedObject) {
   const neccesaryArray = getedObject.hits;
   return neccesaryArray
     .map(
@@ -39,4 +39,14 @@ export function makeGallery(getedObject) {
         </li>`
     )
     .join('');
+}
+
+export function showLoader() {
+  document.querySelector('.loader-text').classList.remove('hidden');
+  document.querySelector('.loader-text').classList.add('show');
+}
+
+export function hideLoader() {
+  document.querySelector('.loader-text').classList.remove('show');
+  document.querySelector('.loader-text').classList.add('hidden');
 }
