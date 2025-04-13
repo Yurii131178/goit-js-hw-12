@@ -1,3 +1,4 @@
+
 import { doFetch } from './js/pixabay-api.js';
 
 import { makeGallery } from './js/render-functions.js';
