@@ -1,4 +1,4 @@
-export function createGallery(getedObject) {
+export function makeGallery(getedObject) {
   const neccesaryArray = getedObject.hits;
   return neccesaryArray
     .map(
@@ -38,37 +38,4 @@ export function createGallery(getedObject) {
         </li>`
     )
     .join('');
-}
-
-const loader = document.querySelector('.loader-text');
-
-export function showLoader() {
-  loader.classList.remove('hidden');
-}
-
-export function hideLoader() {
-  loader.classList.add('hidden');
-}
-
-
-///////////////////
-
-export function clearGallery() {
-  galleryContainer.innerHTML = '';
-}
-
-// export function showLoader() {
-//   loader.classList.add('visible');
-// }
-
-// export function hideLoader() {
-//   loader.classList.remove('visible');
-// }
-
-export function showLoadMoreButton() {
-  loadMoreButton.classList.remove('hidden');
-}
-
-export function hideLoadMoreButton() {
-  loadMoreButton.classList.add('hidden');
 }
