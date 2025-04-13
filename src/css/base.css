@@ -91,9 +91,6 @@ main:has(.back-link) {
   object-fit: cover;
 }
 
-.box-statistic {
-}
-
 .statistic-list {
   position: absolute;
   bottom: 0;
